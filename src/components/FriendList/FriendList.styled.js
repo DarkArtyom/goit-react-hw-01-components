@@ -4,7 +4,6 @@ export const List = styled.ul`
 display: flex;
 flex-direction: column;
 margin-top: 20px
-
 `
 
 export const Item = styled.li`
@@ -21,6 +20,7 @@ export const Image = styled.img`
 margin-right: 10px;`
 
 export const StatusOnline = styled.span`
+display: flex;
 width: 5px;
 height: 5px;
 border: none;

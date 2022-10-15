@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types';
-import { Wrapper, ImgWrap, ImgAvatar, Name, Text, StatList, StatItem, ItemStats } from './Profile.styled';
+import {
+  Wrapper,
+  ImgWrap,
+  ImgAvatar,
+  Name,
+  Text,
+  StatList,
+  StatItem,
+  ItemStats,
+} from './Profile.styled';
 
 export const Profile = ({
-  user: {
-    username,
-    tag,
-    location,
-    avatar,
-    stats: { followers, views, likes },
-  },
+  username,
+  tag,
+  location,
+  avatar,
+  stats: { followers, views, likes },
 }) => {
   return (
     <Wrapper>
@@ -38,11 +45,15 @@ export const Profile = ({
 };
 
 Profile.prototype = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      followers: PropTypes.number.isRequired,
+      views: PropTypes.number.isRequired,
+      likes: PropTypes.number.isRequired,
+    })
+  ),
 };
