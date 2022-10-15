@@ -2,12 +2,11 @@ import PropTypes from 'prop-types';
 import { Image, StatusOnline, Item } from './FriendList.styled';
 
 export const FriendListItem = ({ friend }) => {
-  const { isOnline, avatar, name, id } = friend;
   return (
     <Item>
-      <StatusOnline online={isOnline}></StatusOnline>
-      <Image src={avatar} alt={name} width="20" />
-      <p className="name">{name}</p>
+      <StatusOnline online={friend.isOnline}></StatusOnline>
+      <Image src={friend.avatar} alt={friend.name} width="20" />
+      <p className="name">{friend.name}</p>
     </Item>
   );
 };
